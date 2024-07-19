@@ -1,3 +1,4 @@
 # 2D-Platformer
 2D-Platformer project for 2024 CIEN tutorial
-commit½Ã º°µµÀÇ ºê·£Ä¡¸¦ ÆÄ¼­ pushÇÑ µÚ pull request¸¦ ÇØÁÖ¼¼¿ä.
+
+commitì‹œ ë³„ë„ì˜ ë¸Œëœì¹˜ë¥¼ íŒŒì„œ pushí•œ ë’¤ pull requestë¥¼ í•´ì£¼ì„¸ìš”.
