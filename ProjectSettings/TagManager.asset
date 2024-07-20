@@ -6,8 +6,9 @@ TagManager:
   tags:
   - TutorialRequirement
   - Enemy
+  - OneWayPlatform
   layers:
-  - Default
+  - Default 
   - TransparentFX
   - Ignore Raycast
   - 

@@ -42,6 +42,8 @@ namespace Platformer.Mechanics
         internal Animator animator;
         readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
 
+        private bool ignorePlatform;
+
         public Bounds Bounds => collider2d.bounds;
 
         void Awake()
@@ -75,6 +77,15 @@ namespace Platformer.Mechanics
                 {
                     stopJump = true;
                     Schedule<PlayerStopJump>().player = this;
+                }
+
+                if (Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    ignorePlatform = true;
+                }
+                else if (Input.GetKeyUp(KeyCode.DownArrow))
+                {
+                    ignorePlatform = false;
                 }
             }
             else
@@ -154,6 +165,11 @@ namespace Platformer.Mechanics
             animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 
             targetVelocity = move * maxSpeed;
+        }
+
+        public bool ShouldIgnorePlatform()
+        {
+            return ignorePlatform;
         }
 
         public enum JumpState
