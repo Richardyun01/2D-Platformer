@@ -137,6 +137,29 @@ namespace Platformer.Mechanics
                 {
                     var currentNormal = hitBuffer[i].normal;
 
+                    if (hitBuffer[i].transform.tag == "OneWayPlatform")
+                    {
+                        if (this is PlayerController player && player.ShouldIgnorePlatform())
+                        {
+                            continue;
+                        }
+
+                        //Debug.Log("onewayplatform");                     
+                        // If moving upwards, ignore collision with the one-way platform
+                        if (velocity.y > 0)
+                        {
+                            continue;
+                        }
+                        // If moving downwards, handle collision with the one-way platform
+                        /*
+                        else
+                        {
+                            // Do not set IsGrounded to true here to allow the player to fall through
+                            continue;
+                        }
+                        */
+                    }
+
                     //is this surface flat enough to land on?
                     if (currentNormal.y > minGroundNormalY)
                     {
