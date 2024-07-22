@@ -5,9 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - TutorialRequirement
+  - Enemy
   - OneWayPlatform
   layers:
-  - Default
+  - Default 
   - TransparentFX
   - Ignore Raycast
   - 
