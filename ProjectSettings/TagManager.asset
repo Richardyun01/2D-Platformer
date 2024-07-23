@@ -8,13 +8,13 @@ TagManager:
   - Enemy
   - OneWayPlatform
   layers:
-  - Default 
+  - Default
   - TransparentFX
   - Ignore Raycast
   - 
   - Water
   - UI
-  - 
+  - Interactor
   - 
   - 
   - 
