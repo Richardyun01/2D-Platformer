@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Platformer.Gameplay;
@@ -61,7 +61,15 @@ namespace Platformer.Mechanics
         {
             if (controlEnabled)
             {
-                move.x = Input.GetAxis("Horizontal");
+                move.x = 0; // 초기화
+                if (Input.GetKey(KeyCode.A))
+                {
+                    move.x = -1;
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    move.x = 1;
+                }
                 if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
                 {
                     jumpState = JumpState.PrepareToJump;
@@ -79,11 +87,11 @@ namespace Platformer.Mechanics
                     Schedule<PlayerStopJump>().player = this;
                 }
 
-                if (Input.GetKeyDown(KeyCode.DownArrow))
+                if (Input.GetKeyDown(KeyCode.S))
                 {
                     ignorePlatform = true;
                 }
-                else if (Input.GetKeyUp(KeyCode.DownArrow))
+                else if (Input.GetKeyUp(KeyCode.S))
                 {
                     ignorePlatform = false;
                 }
@@ -95,6 +103,14 @@ namespace Platformer.Mechanics
             UpdateJumpState();
             base.Update();
         }
+
+        /*
+        void CanMove()
+        {
+            if (FindObjectOfType<InteractionSystem>().isExamining)
+                controlEnabled = false;
+        }
+        */
 
         void UpdateJumpState()
         {
