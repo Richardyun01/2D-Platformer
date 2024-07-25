@@ -8,7 +8,7 @@ TagManager:
   - Enemy
   - OneWayPlatform
   layers:
-  - Default 
+  - Default
   - TransparentFX
   - Ignore Raycast
   - 
@@ -18,7 +18,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Item
   - 
   - 
   - 
