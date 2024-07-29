@@ -34,7 +34,7 @@ public class Item : MonoBehaviour
                 FindObjectOfType<InteractionSystem>().ExamineItem(this);
                 break;
             default:
-                Debug.Log("Null Item");
+                // Used for custom event
                 break;
         }
 
