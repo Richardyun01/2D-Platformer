@@ -45,6 +45,7 @@ namespace Platformer.Mechanics
         private bool ignorePlatform;
 
         Rigidbody2D rigid;
+        Vector2 KB;
 
         public Bounds Bounds => collider2d.bounds;
 
@@ -184,7 +185,13 @@ namespace Platformer.Mechanics
             animator.SetBool("grounded", IsGrounded);
             animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 
-            targetVelocity = move * maxSpeed;
+            targetVelocity = move * maxSpeed + KB;
+
+            KB /= 1.1f;
+            if (KB.sqrMagnitude < 0.1f)
+            {
+                controlEnabled = true;
+            }
         }
 
         public bool ShouldIgnorePlatform()
@@ -197,29 +204,31 @@ namespace Platformer.Mechanics
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
-                OnDamaged(collision.transform.position);
+                EnemyCollision knockback = collision.gameObject.GetComponent<EnemyCollision>();
+                //EnemyCollision KBforce = collision.get
+                OnDamaged(collision.transform.position, knockback.KBforceX, knockback.KBforceY);
             }
         }
 
-        void OnDamaged(Vector2 targetPos)
+        void OnDamaged(Vector2 targetPos, float knockbackX, float knockbackY)
         {
             gameObject.layer = 11;
             spriteRenderer.color = new Color(1, 1, 1, 0.4f);
-            int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1;
-            //rigid.AddForce(new Vector2(dirc, 1)*7, ForceMode2D.Impulse);
-            move.x = dirc * maxSpeed;
+            int dircX = transform.position.x - targetPos.x > 0 ? 1 : -1;
+            int dircY = transform.position.y - targetPos.y > 0 ? 1 : -1; //dircY * maxSpeed * knockbackY
+            KB = new Vector2(dircX * maxSpeed * knockbackX, 0);
             controlEnabled = false;
             Debug.Log("OnDamaged");
 
-            Invoke("OffDamaged", 1);
+            Invoke("OffDamaged", 2);
         }
 
         void OffDamaged()
         {
             gameObject.layer = 3;
             spriteRenderer.color = new Color(1, 1, 1, 1);
-            move.x = 0;
-            controlEnabled = true;
+            //move.x = 0;
+            //controlEnabled = true;
             Debug.Log("OffDamaged");
         }
 

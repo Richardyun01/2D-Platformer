@@ -1471,6 +1471,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  KBforceX: 1
+  KBforceY: 1
 --- !u!61 &742929102
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1901,6 +1903,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CollisionDetection
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114230831923080080, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
+        type: 3}
+      propertyPath: KBforce
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114230831923080080, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
         type: 3}
@@ -2513,7 +2520,7 @@ GameObject:
   - component: {fileID: 1146893409}
   - component: {fileID: 1146893410}
   - component: {fileID: 1146893411}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TestEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2664,6 +2671,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  KBforceX: 5
+  KBforceY: 2
 --- !u!114 &1146893410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4449,7 +4458,7 @@ Transform:
   m_GameObject: {fileID: 1707302762}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5254061, y: -0.9044332, z: 0}
+  m_LocalPosition: {x: 0.3087418, y: -0.9044332, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
