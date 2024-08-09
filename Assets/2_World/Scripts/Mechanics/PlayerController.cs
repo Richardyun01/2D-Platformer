@@ -44,6 +44,8 @@ namespace Platformer.Mechanics
 
         private bool ignorePlatform;
 
+        Rigidbody2D rigid;
+
         public Bounds Bounds => collider2d.bounds;
 
         void Awake()
@@ -53,6 +55,7 @@ namespace Platformer.Mechanics
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
+            rigid = GetComponent<Rigidbody2D>();
             checkDoubleJump = false;
             jumpCount = 0;
         }
@@ -62,6 +65,7 @@ namespace Platformer.Mechanics
             if (controlEnabled)
             {
                 move.x = 0; // 초기화
+
                 if (Input.GetKey(KeyCode.A))
                 {
                     move.x = -1;
@@ -186,6 +190,37 @@ namespace Platformer.Mechanics
         public bool ShouldIgnorePlatform()
         {
             return ignorePlatform;
+        }
+
+        
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                OnDamaged(collision.transform.position);
+            }
+        }
+
+        void OnDamaged(Vector2 targetPos)
+        {
+            gameObject.layer = 11;
+            spriteRenderer.color = new Color(1, 1, 1, 0.4f);
+            int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1;
+            //rigid.AddForce(new Vector2(dirc, 1)*7, ForceMode2D.Impulse);
+            move.x = dirc * maxSpeed;
+            controlEnabled = false;
+            Debug.Log("OnDamaged");
+
+            Invoke("OffDamaged", 1);
+        }
+
+        void OffDamaged()
+        {
+            gameObject.layer = 3;
+            spriteRenderer.color = new Color(1, 1, 1, 1);
+            move.x = 0;
+            controlEnabled = true;
+            Debug.Log("OffDamaged");
         }
 
         public enum JumpState
