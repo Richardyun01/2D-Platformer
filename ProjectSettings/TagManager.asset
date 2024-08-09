@@ -9,6 +9,8 @@ TagManager:
   - OneWayPlatform
   - Teleporter
   - Platform
+  - Waypoint
+  - MovableBlock
   layers:
   - Default
   - TransparentFX
@@ -17,11 +19,11 @@ TagManager:
   - Water
   - UI
   - Background
-  - 
+  - Enemy
   - 
   - 
   - Item
-  - 
+  - PlayerDamaged
   - 
   - 
   - 

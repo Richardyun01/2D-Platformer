@@ -137,6 +137,11 @@ namespace Platformer.Mechanics
                 {
                     var currentNormal = hitBuffer[i].normal;
 
+                    if (hitBuffer[i].transform.tag == "Enemy")
+                    {
+                        continue;
+                    }
+
                     if (hitBuffer[i].transform.tag == "OneWayPlatform")
                     {
                         if (this is PlayerController player && player.ShouldIgnorePlatform())
