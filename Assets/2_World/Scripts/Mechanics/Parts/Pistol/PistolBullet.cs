@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float LifeTIme = 0.5f;
+    public float LifeTime = 0.5f;
     public int damage = 5;
     void Start()
     {
-        Destroy(gameObject,LifeTIme);
+        Destroy(gameObject, LifeTime);
     }
     private void Update()
     {

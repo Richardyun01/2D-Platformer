@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 100;
+    public EnemyManager enemyManager;
     private int currentHealth;
 
     void Start()
@@ -23,6 +24,10 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
+        if (enemyManager != null)
+        {
+            enemyManager.OnEnemyDefeated(gameObject);
+        }
         Destroy(gameObject);
     }
 }
