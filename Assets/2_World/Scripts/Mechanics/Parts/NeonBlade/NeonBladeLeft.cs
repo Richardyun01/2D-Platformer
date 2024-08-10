@@ -41,7 +41,7 @@ public class NeonBladeLeft : MonoBehaviour
                 {
                     if (collider.tag == "Enemy")
                     {
-                        Debug.Log("적을 때림);
+                        Debug.Log("적을 때림");
                     }
                 }
 
