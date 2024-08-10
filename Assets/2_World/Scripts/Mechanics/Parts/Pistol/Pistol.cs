@@ -8,7 +8,7 @@ public class Pistol : MonoBehaviour
     //총 스텟 관련 변수, 나중에 강화되면 바뀔 수 있음
     //public float PistolDamage = 1f; //Bullet.cs로 이동
     public float BulletSpeed = 8.0f;
-    float FireCoolTIme = 0.5f;
+    float FireCoolTime = 0.5f;
     float NextFireTime = 0f;
 
     public GameObject bulletPos;
@@ -37,7 +37,7 @@ public class Pistol : MonoBehaviour
                 Rigidbody2D rigidbody = PistolBullet.GetComponent<Rigidbody2D>();
                 PistolBullet.gameObject.GetComponent<Rigidbody2D>().AddForce(BulletDir * BulletSpeed, ForceMode2D.Impulse);
 
-                NextFireTime = Time.time + FireCoolTIme;
+                NextFireTime = Time.time + FireCoolTime;
             }
             else
             {
