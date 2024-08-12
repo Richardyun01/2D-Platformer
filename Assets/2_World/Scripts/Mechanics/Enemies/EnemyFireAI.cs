@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class EnemyAI : MonoBehaviour
+public class EnemyFireAI : MonoBehaviour
 {
     public List<Transform> points;
     public int nextID;
@@ -17,7 +17,7 @@ public class EnemyAI : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded;
 
-    protected void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -32,18 +32,22 @@ public class EnemyAI : MonoBehaviour
     {
         GetComponent<BoxCollider2D>().isTrigger = true;
 
+        /*
         GameObject root = new GameObject(name + "_Root");
         root.transform.position = transform.position;
         transform.SetParent(root.transform);
+        
         GameObject waypoints = new GameObject("Waypoints");
         waypoints.transform.SetParent(root.transform);
         waypoints.transform.position = root.transform.position;
         GameObject p1 = new GameObject("Point1"); p1.transform.SetParent(waypoints.transform); p1.transform.position = root.transform.position;
         GameObject p2 = new GameObject("Point2"); p2.transform.SetParent(waypoints.transform); p2.transform.position = root.transform.position;
+        
 
         points = new List<Transform>();
         points.Add(p1.transform);
         points.Add(p2.transform);
+        */
     }
 
     private void Update()
@@ -65,7 +69,7 @@ public class EnemyAI : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(transform.position, 0.1f, LayerMask.GetMask("Ground"));
     }
 
-    private void ChasePlayer()
+    void ChasePlayer()
     {
         if (player.position.x > transform.position.x)
         {
@@ -79,7 +83,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private void MoveToNextPoint()
+    void MoveToNextPoint()
     {
         Transform goalPoint = points[nextID];
         if (goalPoint.transform.position.x > transform.position.x)
