@@ -210,6 +210,20 @@ namespace Platformer.Mechanics
             }
         }
 
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                EnemyCollision knockback = collision.gameObject.GetComponent<EnemyCollision>();
+                //EnemyCollision KBforce = collision.get
+                OnDamaged(collision.transform.position, knockback.KBforceX, knockback.KBforceY);
+                if (collision.gameObject.GetComponent<EnemyBullet>() != null)
+                {
+                    Destroy(collision.gameObject);
+                }
+            }
+        }
+
         void OnDamaged(Vector2 targetPos, float knockbackX, float knockbackY)
         {
             gameObject.layer = 11;

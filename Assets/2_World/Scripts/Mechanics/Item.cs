@@ -33,6 +33,9 @@ public class Item : MonoBehaviour
                 // Call the Examine item in the interaction system
                 FindObjectOfType<InteractionSystem>().ExamineItem(this);
                 break;
+            case InteractionType.NONE:
+                // NONE 타입에서는 기본적으로 아무것도 하지 않음
+                break;
             default:
                 // Used for custom event
                 break;

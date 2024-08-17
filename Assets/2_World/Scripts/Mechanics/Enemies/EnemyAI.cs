@@ -13,14 +13,19 @@ public class EnemyAI : MonoBehaviour
 
     public Transform player;
     public float chaseDistance = 3f;
+    public float returnDistance = 5f;
 
     private Rigidbody2D rb;
+    private Vector2 initialPosition;
     private bool isGrounded;
+    private bool isChasingPlayer = false;
+    private bool isReturning = false;
 
     protected void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        initialPosition = transform.position;
     }
 
     private void Reset()
@@ -52,9 +57,21 @@ public class EnemyAI : MonoBehaviour
 
         if (distanceToPlayer < chaseDistance)
         {
+            isChasingPlayer = true;
+            isReturning = false;
             ChasePlayer();
         }
-        else
+        else if (isChasingPlayer && distanceToPlayer > returnDistance)
+        {
+            isChasingPlayer = false;
+            isReturning = true;
+        }
+
+        if (isReturning)
+        {
+            ReturnToInitialPosition();
+        }
+        else if (!isChasingPlayer && !isReturning && points.Count > 0)
         {
             MoveToNextPoint();
         }
@@ -76,6 +93,28 @@ public class EnemyAI : MonoBehaviour
         {
             transform.localScale = new Vector3(1, 1, 1);
             rb.velocity = new Vector2(-speed, rb.velocity.y);
+        }
+    }
+
+    private void ReturnToInitialPosition()
+    {
+        if (Vector2.Distance(transform.position, initialPosition) > 0.1f)
+        {
+            if (initialPosition.x > transform.position.x)
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+                rb.velocity = new Vector2(speed, rb.velocity.y);
+            }
+            else
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+                rb.velocity = new Vector2(-speed, rb.velocity.y);
+            }
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+            isReturning = false;  // º¹±Í ¿Ï·á
         }
     }
 

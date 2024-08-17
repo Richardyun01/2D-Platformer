@@ -1025,39 +1025,6 @@ Transform:
   - {fileID: 1656704319}
   m_Father: {fileID: 1605432055}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &402847099
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 402847100}
-  m_Layer: 0
-  m_Name: Waypoints
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &402847100
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 402847099}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1485843399}
-  - {fileID: 1914159686}
-  m_Father: {fileID: 916148643}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &504391979
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,7 +2093,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2060624216}
-  - {fileID: 402847100}
   m_Father: {fileID: 1413948459}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &938177349
@@ -2966,6 +2932,7 @@ MonoBehaviour:
   speed: 2
   player: {fileID: 1892316622}
   chaseDistance: 3
+  returnDistance: 5
 --- !u!61 &1199477152
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4078,37 +4045,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1485843398
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1485843399}
-  m_Layer: 0
-  m_Name: Point1
-  m_TagString: Waypoint
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1485843399
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1485843398}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 402847100}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1539827360
 GameObject:
   m_ObjectHideFlags: 0
@@ -4826,7 +4762,7 @@ Transform:
   m_GameObject: {fileID: 1707302762}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2734959, y: -0.94741005, z: 0}
+  m_LocalPosition: {x: 1.2262337, y: -0.96233433, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18244,37 +18180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806a144ee61ceac44ad8e6594971da25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1914159685
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1914159686}
-  m_Layer: 0
-  m_Name: Point2
-  m_TagString: Waypoint
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1914159686
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914159685}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 402847100}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1957070277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19289,13 +19194,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef42b65460631984383083ef39254598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {fileID: 1485843399}
-  - {fileID: 1914159686}
+  points: []
   nextID: 0
   speed: 2
   player: {fileID: 1892316622}
   chaseDistance: 3
+  returnDistance: 5
 --- !u!61 &2060624221
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19573,6 +19477,7 @@ MonoBehaviour:
   speed: 2
   player: {fileID: 1892316622}
   chaseDistance: 3
+  returnDistance: 5
 --- !u!61 &2110748330
 BoxCollider2D:
   m_ObjectHideFlags: 0
