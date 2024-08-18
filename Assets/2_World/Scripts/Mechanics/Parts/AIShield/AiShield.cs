@@ -6,7 +6,7 @@ using UnityEngine;
 public class AiShleid : MonoBehaviour
 {
     float Speed_reduction = 0.5f;
-    //float Damage_reduction = 0.5f;
+    float Damage_reduction = 0.5f;
     void Start()
     {
 
@@ -22,6 +22,11 @@ public class AiShleid : MonoBehaviour
                 playerController.maxSpeed *= Speed_reduction;
                 Debug.Log("방패 On");
             }
+            PlayerStatus status = GetComponent<PlayerStatus>();
+            if(status != null )
+            {
+                status.Player_AttackTaken_Scale *= Damage_reduction;
+            }
         }
         if (Input.GetMouseButtonUp(1))
         {
@@ -30,6 +35,11 @@ public class AiShleid : MonoBehaviour
             {
                 playerController.maxSpeed /= Speed_reduction;
                 Debug.Log("방패 Off");
+            }
+            PlayerStatus status = GetComponent<PlayerStatus>();
+            if (status != null)
+            {
+                status.Player_AttackTaken_Scale /= Damage_reduction;
             }
         }
     }
