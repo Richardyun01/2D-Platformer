@@ -49,9 +49,12 @@ namespace Platformer.Mechanics
 
         public Bounds Bounds => collider2d.bounds;
 
+        PlayerHealth playerHealth;
+
         void Awake()
         {
             health = GetComponent<Health>();
+            playerHealth = GetComponent<PlayerHealth>();
             audioSource = GetComponent<AudioSource>();
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -205,8 +208,22 @@ namespace Platformer.Mechanics
             if (collision.gameObject.CompareTag("Enemy"))
             {
                 EnemyCollision knockback = collision.gameObject.GetComponent<EnemyCollision>();
-                //EnemyCollision KBforce = collision.get
+                playerHealth.TakeDamage(knockback.damage);
                 OnDamaged(collision.transform.position, knockback.KBforceX, knockback.KBforceY);
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                EnemyCollision knockback = collision.gameObject.GetComponent<EnemyCollision>();
+                playerHealth.TakeDamage(knockback.damage);
+                OnDamaged(collision.transform.position, knockback.KBforceX, knockback.KBforceY);
+                if (collision.gameObject.GetComponent<EnemyBullet>() != null)
+                {
+                    Destroy(collision.gameObject);
+                }
             }
         }
 

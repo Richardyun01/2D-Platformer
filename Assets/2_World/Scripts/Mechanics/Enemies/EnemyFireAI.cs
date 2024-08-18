@@ -13,14 +13,24 @@ public class EnemyFireAI : MonoBehaviour
 
     public Transform player;
     public float chaseDistance = 3f;
+    public float returnDistance = 5f;
 
     private Rigidbody2D rb;
+    private Vector2 initialPosition;
     private bool isGrounded;
+    private bool isChasingPlayer = false;
+    private bool isReturning = false;
 
-    private void Start()
+    public float shootDistance = 3f;
+    public float shootInterval = 3f;
+    public float shootIntervalCurrent = 0f;
+    public GameObject bullet;
+
+    protected void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        initialPosition = transform.position;
     }
 
     private void Reset()
@@ -36,13 +46,11 @@ public class EnemyFireAI : MonoBehaviour
         GameObject root = new GameObject(name + "_Root");
         root.transform.position = transform.position;
         transform.SetParent(root.transform);
-        
         GameObject waypoints = new GameObject("Waypoints");
         waypoints.transform.SetParent(root.transform);
         waypoints.transform.position = root.transform.position;
         GameObject p1 = new GameObject("Point1"); p1.transform.SetParent(waypoints.transform); p1.transform.position = root.transform.position;
         GameObject p2 = new GameObject("Point2"); p2.transform.SetParent(waypoints.transform); p2.transform.position = root.transform.position;
-        
 
         points = new List<Transform>();
         points.Add(p1.transform);
@@ -56,12 +64,35 @@ public class EnemyFireAI : MonoBehaviour
 
         if (distanceToPlayer < chaseDistance)
         {
+            isChasingPlayer = true;
+            isReturning = false;
             ChasePlayer();
         }
-        else
+        else if (isChasingPlayer && distanceToPlayer > returnDistance)
+        {
+            isChasingPlayer = false;
+            isReturning = true;
+        }
+
+        if (distanceToPlayer < shootDistance)
+        {
+            if (shootIntervalCurrent < 0)
+            {
+                shootAttack();
+                shootIntervalCurrent = shootInterval;
+            }
+        }
+
+        if (isReturning)
+        {
+            ReturnToInitialPosition();
+        }
+        else if (!isChasingPlayer && !isReturning && points.Count > 0)
         {
             MoveToNextPoint();
         }
+
+        shootIntervalCurrent -= Time.deltaTime;
     }
 
     private void FixedUpdate()
@@ -69,7 +100,7 @@ public class EnemyFireAI : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(transform.position, 0.1f, LayerMask.GetMask("Ground"));
     }
 
-    void ChasePlayer()
+    private void ChasePlayer()
     {
         if (player.position.x > transform.position.x)
         {
@@ -83,7 +114,29 @@ public class EnemyFireAI : MonoBehaviour
         }
     }
 
-    void MoveToNextPoint()
+    private void ReturnToInitialPosition()
+    {
+        if (Vector2.Distance(transform.position, initialPosition) > 0.1f)
+        {
+            if (initialPosition.x > transform.position.x)
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+                rb.velocity = new Vector2(speed, rb.velocity.y);
+            }
+            else
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+                rb.velocity = new Vector2(-speed, rb.velocity.y);
+            }
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+            isReturning = false;  // 복귀 완료
+        }
+    }
+
+    private void MoveToNextPoint()
     {
         Transform goalPoint = points[nextID];
         if (goalPoint.transform.position.x > transform.position.x)
@@ -105,5 +158,13 @@ public class EnemyFireAI : MonoBehaviour
                 idChangeValue = 1;
             nextID += idChangeValue;
         }
+    }
+
+    private void shootAttack()
+    {
+        // 적 위치에 복제
+        GameObject shot = Instantiate(bullet, transform.position, Quaternion.identity);
+        Vector3 playerPos = player.position - transform.position;
+        shot.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(playerPos.y, playerPos.x)*180/Mathf.PI);
     }
 }

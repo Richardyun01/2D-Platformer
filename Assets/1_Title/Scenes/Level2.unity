@@ -530,6 +530,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e852daf5eb5060a4693938862e5f8b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageButton: {fileID: 521758797}
+  lockedSprite: {fileID: 21300000, guid: 775c2109b5ff8e341a6be4414d8425c2, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 18f14dc5b1274d1428750f2d8a7a45cc, type: 3}
 --- !u!1 &649919711
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,6 +821,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85f3bb6ee803b84fa9163297bc081aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageButton: {fileID: 1189752260}
+  lockedSprite: {fileID: 21300000, guid: 775c2109b5ff8e341a6be4414d8425c2, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: e0ac3ef836a267e4b8832742f8dd89c2, type: 3}
 --- !u!1 &1196485026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bbd865c8aa2eff4ba153c7d12b6a41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageButton: {fileID: 1695229200}
+  lockedSprite: {fileID: 21300000, guid: 775c2109b5ff8e341a6be4414d8425c2, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: a92e1fcb6e4d08943816610e90c2f350, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

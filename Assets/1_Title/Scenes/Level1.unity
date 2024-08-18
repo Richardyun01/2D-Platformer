@@ -739,6 +739,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52155b5832a18246a31bff6be1f65a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageButton: {fileID: 1189752260}
+  lockedSprite: {fileID: 21300000, guid: 22acab8f8330a444497c8f9fc5e2fb45, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: a2c2abcd2237e4b42b9d3ab32d61c46e, type: 3}
 --- !u!1 &1196485026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,6 +1083,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2ebad7f0495484490a468774879014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageButton: {fileID: 1695229200}
+  lockedSprite: {fileID: 21300000, guid: 22acab8f8330a444497c8f9fc5e2fb45, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 062428f2c96bec842a3e9770baaead1b, type: 3}
 --- !u!1 &1989838549
 GameObject:
   m_ObjectHideFlags: 0
