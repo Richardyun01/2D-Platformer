@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Stage13 : MonoBehaviour
+public class Stage32 : MonoBehaviour
 {
     public Button stageButton; // 버튼 UI
     public Sprite lockedSprite; // 잠겨 있는 상태의 스프라이트
@@ -14,7 +14,7 @@ public class Stage13 : MonoBehaviour
     private void Start()
     {
         buttonImage = stageButton.GetComponent<Image>();
-        int previousStageCleared = PlayerPrefs.GetInt("Stage12Cleared", 0); // 이전 스테이지가 클리어되었는지 확인
+        int previousStageCleared = PlayerPrefs.GetInt("Stage31Cleared", 0); // 이전 스테이지가 클리어되었는지 확인
 
         if (previousStageCleared == 1)
         {
@@ -29,8 +29,8 @@ public class Stage13 : MonoBehaviour
         }
     }
 
-    public void Stage13Btn()
+    public void Stage32Btn()
     {
-        SceneManager.LoadScene("Stage1-3");
+        SceneManager.LoadScene("Stage3-2");
     }
 }

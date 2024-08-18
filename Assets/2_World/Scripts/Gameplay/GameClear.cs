@@ -7,6 +7,8 @@ public class GameClear : MonoBehaviour
     public GameManagerScript gameManager;
     public GameObject player;
 
+    public int stageNumber; // 현재 스테이지 번호
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Player"))
@@ -16,6 +18,7 @@ public class GameClear : MonoBehaviour
             if (gameManager != null)
             {
                 gameManager.gameClear();
+                PlayerPrefs.SetInt("Stage" + stageNumber + "Cleared", 1); // 스테이지 클리어 상태 저장
             }
             else
             {
