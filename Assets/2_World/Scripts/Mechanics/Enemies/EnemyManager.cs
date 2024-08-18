@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    public List<GameObject> enemies;  // 적들을 리스트로 관리합니다.
-    public DoorMover doorMover;        // 문을 제어하는 DoorMover 스크립트의 참조를 설정합니다.
+    public List<GameObject> enemies;    // 적들을 리스트로 관리합니다.
+    public DoorMover doorMover;         // 문을 제어하는 DoorMover 스크립트의 참조를 설정합니다.
+    public GameObject objectToToggle;   // 활성화/비활성화할 오브젝트의 참조를 설정합니다.
 
     // Update는 매 프레임마다 호출됩니다.
     void Update()
@@ -14,7 +15,18 @@ public class EnemyManager : MonoBehaviour
         if (enemies.Count == 0)
         {
             // 적이 모두 처치되었을 때 문을 엽니다.
-            doorMover.OpenDoor();
+            if (doorMover != null)
+            {
+                doorMover.OpenDoor();
+            }
+            
+
+            // 특정 오브젝트의 활성화/비활성화 기능 추가
+            if (objectToToggle != null)
+            {
+                objectToToggle.SetActive(!objectToToggle.activeSelf);
+            }
+
             // 더 이상 Update를 수행하지 않기 위해 스크립트를 비활성화합니다.
             this.enabled = false;
         }
@@ -26,4 +38,3 @@ public class EnemyManager : MonoBehaviour
         enemies.Remove(enemy);
     }
 }
-

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour
 {
     public DoorPressure doorPressure; // 자동문 스크립트 참조
+    public DoorPressureOnce doorPressureOnce;
     public GameObject platform;
     public string targetTagPlayer = "Player"; // 플레이어나 특정 블록의 태그
     public string targetTagBlock = "MovableBlock";
@@ -16,6 +17,10 @@ public class PressurePlate : MonoBehaviour
             if (doorPressure != null)
             {
                 doorPressure.OpenDoor();
+            }
+            if (doorPressureOnce != null)
+            {
+                doorPressureOnce.OpenDoor();
             }
             if (platform != null)
             {

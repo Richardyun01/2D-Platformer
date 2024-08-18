@@ -33,6 +33,13 @@ public class Bullet : MonoBehaviour
         //벽이나 바닥에 닿았을 때(Platform 또는 OneWayPlatform 태그를 가진 물체) 총알이 사라짐
         if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "OneWayPlatform" )
         {
+            // 플랫폼이 BreakablePlatform 스크립트를 가지고 있는지 확인
+            BreakablePlatform breakablePlatform = collision.gameObject.GetComponent<BreakablePlatform>();
+            if (breakablePlatform != null)
+            {
+                breakablePlatform.TakeDamage(damage);
+            }
+
             Destroy(this.gameObject);
         }
     }
