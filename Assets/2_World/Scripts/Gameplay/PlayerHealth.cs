@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
-    private int currentHealth;
+    public float currentHealth;
     public int currentDefence;
 
     public Text healthText;
@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthUI();
     }
 
-    void UpdateHealthUI()
+    public void UpdateHealthUI()
     {
         healthText.text = "Health: " + currentHealth.ToString();
     }
@@ -37,6 +37,17 @@ public class PlayerHealth : MonoBehaviour
             gameManager.gameOver();
         }
         UpdateHealthUI();
+    }
+    public void IncreaseHP(float HpAmount)
+    {
+        currentHealth += HpAmount;
+    }
+    void Update()
+    {
+        if (currentHealth > 100)
+        {
+            currentHealth = 100;
+        }
     }
 }
 
