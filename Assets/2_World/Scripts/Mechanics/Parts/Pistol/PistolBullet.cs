@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //총알이 Player 태그를 가지지 않는 물체를 맞추면 사라짐, Enemy 태그를 가진 물체를 맞추면 맞췄다는 문구가 뜨고 사라짐
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "BreakablePlatform")
         {
             Debug.Log("적을 맞춤");
             EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();

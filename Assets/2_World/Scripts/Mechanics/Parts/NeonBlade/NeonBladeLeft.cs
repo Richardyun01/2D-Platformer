@@ -39,7 +39,7 @@ public class NeonBladeLeft : MonoBehaviour
                 Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(BladeAttackPos.position, boxSize, 0);
                 foreach (Collider2D collider in collider2Ds)
                 {
-                    if (collider.tag == "Enemy")
+                    if (collider.tag == "Enemy" || collider.tag == "BreakablePlatform")
                     {
                         Debug.Log("적을 때림");
                     }

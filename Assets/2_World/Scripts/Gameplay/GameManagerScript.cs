@@ -41,7 +41,8 @@ public class GameManagerScript : MonoBehaviour
 
     public void gameClear()
     {
-        gameClearUI.SetActive(true);
+        if (gameClearUI != null)
+            gameClearUI.SetActive(true);
     }
 
     public void restart()
