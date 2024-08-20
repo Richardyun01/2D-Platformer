@@ -38,5 +38,6 @@ public class EnemyManager : MonoBehaviour
     {
         Debug.Log("Check Kill");
         enemies.Remove(enemy);
+        Destroy(enemy);
     }
 }

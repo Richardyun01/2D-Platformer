@@ -18520,7 +18520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
-  enemyManager: {fileID: 0}
+  enemyManager: {fileID: 545874521}
 --- !u!114 &1946240612
 MonoBehaviour:
   m_ObjectHideFlags: 0
