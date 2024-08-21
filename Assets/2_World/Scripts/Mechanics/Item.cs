@@ -13,10 +13,21 @@ public class Item : MonoBehaviour
     [Header("Custom Event")]
     public UnityEvent customEvent;
 
+    public string itemID;
+
     private void Reset()
     {
         GetComponent<Collider2D>().isTrigger = true;
         gameObject.layer = 10;
+    }
+
+    private void Start()
+    {
+        // 아이템이 이미 획득되었는지 확인하여, 획득되었으면 비활성화
+        if (PlayerPrefs.GetInt(itemID, 0) == 1)
+        {
+            //gameObject.SetActive(false);
+        }
     }
 
     public void Interact()
@@ -24,6 +35,26 @@ public class Item : MonoBehaviour
         switch (type)
         {
             case InteractionType.PickUp:
+                // 아이템을 획득 상태로 저장
+                PlayerPrefs.SetInt(itemID, 1);
+                PlayerPrefs.Save();
+
+                if (itemID == "DoubleJumpItem")
+                {
+                    PlayerPrefs.SetInt("DoubleJumpEnabled", 1);
+                    PlayerPrefs.Save();
+                }
+                if (itemID == "BulsonShotRedItem")
+                {
+                    PlayerPrefs.SetInt("BulsonShotRedItem", 1);
+                    PlayerPrefs.Save();
+                }
+                if (itemID == "BulsonShotBlueItem")
+                {
+                    PlayerPrefs.SetInt("BulsonShotBlueItem", 1);
+                    PlayerPrefs.Save();
+                }
+
                 // Add the object to the PickedUpItems list
                 FindObjectOfType<InteractionSystem>().PickUpItem(gameObject);
                 // Disable

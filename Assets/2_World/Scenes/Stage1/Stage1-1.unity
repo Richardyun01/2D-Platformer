@@ -2389,6 +2389,16 @@ PrefabInstance:
       propertyPath: minGroundNormalY
       value: 0.55
       objectReference: {fileID: 0}
+    - target: {fileID: 2191122411424355877, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
+        type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 772522327}
+    - target: {fileID: 2191122411424355877, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 2132374904}
     m_RemovedComponents:
     - {fileID: -6027162759441720994, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
     m_RemovedGameObjects: []
@@ -2425,15 +2435,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1208144871472054, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 862088352}
-    - targetCorrespondingSourceObject: {fileID: 1208144871472054, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 862088353}
-    - targetCorrespondingSourceObject: {fileID: 1208144871472054, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 862088354}
   m_SourcePrefab: {fileID: 100100000, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
 --- !u!1 &862088348 stripped
 GameObject:
@@ -2482,23 +2484,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Id: 2cedde77-9eec-414f-a172-5c4b3c8e2891
---- !u!114 &862088352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862088348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0294f4869bdd3404bacc8499078cf032, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  currentDefence: 0
-  healthText: {fileID: 772522327}
-  gameManager: {fileID: 2132374904}
 --- !u!114 &862088353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2515,24 +2500,6 @@ MonoBehaviour:
   bulletPos: {fileID: 682015665}
   BulletPref: {fileID: 2798133969259331607, guid: 18181015d1fe0ee4495fd0823a823871,
     type: 3}
---- !u!114 &862088354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862088348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7ab307573dddd44b090f4bb3ad93a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Attack: 5
-  Defense: 0
-  Player_Attack_Scale: 1
-  Player_AttackTaken_Scale: 1
-  Weapon_Attack: 0
-  Enemy_Defense: 0
 --- !u!1 &894405828
 GameObject:
   m_ObjectHideFlags: 0
@@ -8568,6 +8535,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  itemID: 
 --- !u!61 &1787095886
 BoxCollider2D:
   m_ObjectHideFlags: 0

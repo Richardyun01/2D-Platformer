@@ -2561,10 +2561,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1208144871472054, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 862088365}
-    - targetCorrespondingSourceObject: {fileID: 1208144871472054, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 862088360}
     - targetCorrespondingSourceObject: {fileID: 1208144871472054, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
         type: 3}
@@ -2582,14 +2578,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 862088362}
-    - targetCorrespondingSourceObject: {fileID: 1208144871472054, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 862088364}
-    - targetCorrespondingSourceObject: {fileID: 1208144871472054, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 862088363}
     - targetCorrespondingSourceObject: {fileID: 1208144871472054, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
         type: 3}
       insertIndex: -1
@@ -2695,55 +2683,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2064348850ec5d458789846d2177112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &862088363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862088348}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 795db4f5654c64b4eab8ad3f78be1c04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  status: {fileID: 862088365}
-  AttackBonus: 5
---- !u!114 &862088364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862088348}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f98dfbc39844aea4e9b0ddb2fe3bc9c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  status: {fileID: 862088365}
-  health: {fileID: 862088352}
-  DefenseBonus: 5
-  HpIncreaseing: 0
-  HpIncreasingValue: 0.5
---- !u!114 &862088365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862088348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7ab307573dddd44b090f4bb3ad93a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Attack: 5
-  Defense: 0
-  Player_Attack_Scale: 1
-  Player_AttackTaken_Scale: 1
-  Weapon_Attack: 0
-  Enemy_Defense: 0
 --- !u!114 &862088373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2756,7 +2695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c287e10bc3b2f498e14183987b9057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  status: {fileID: 862088365}
+  status: {fileID: 0}
   AttackScaleBonus: 0.5
   AttackTakenScaleBonus: 0.5
 --- !u!114 &862088374
@@ -9445,6 +9384,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  itemID: 
 --- !u!61 &1787095886
 BoxCollider2D:
   m_ObjectHideFlags: 0
