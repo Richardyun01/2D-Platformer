@@ -822,7 +822,7 @@ MonoBehaviour:
   player: {fileID: 862088349}
   chaseDistance: 3
   returnDistance: 5
-  shootDistance: 3
+  shootDistance: 5
   shootInterval: 3
   shootIntervalCurrent: 0
   bullet: {fileID: 2798133969259331607, guid: af4790b2facf6674ea41ddd168964fab, type: 3}
@@ -1890,7 +1890,7 @@ MonoBehaviour:
   player: {fileID: 862088349}
   chaseDistance: 3
   returnDistance: 5
-  shootDistance: 3
+  shootDistance: 5
   shootInterval: 3
   shootIntervalCurrent: 0
   bullet: {fileID: 2798133969259331607, guid: af4790b2facf6674ea41ddd168964fab, type: 3}
@@ -4372,6 +4372,16 @@ PrefabInstance:
       propertyPath: minGroundNormalY
       value: 0.55
       objectReference: {fileID: 0}
+    - target: {fileID: 2191122411424355877, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
+        type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 772522327}
+    - target: {fileID: 2191122411424355877, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 2132374904}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -4404,10 +4414,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 862088350}
-    - targetCorrespondingSourceObject: {fileID: 1208144871472054, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 862088352}
     - targetCorrespondingSourceObject: {fileID: 1208144871472054, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
         type: 3}
       insertIndex: -1
@@ -4460,23 +4466,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Id: 2cedde77-9eec-414f-a172-5c4b3c8e2891
---- !u!114 &862088352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862088348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0294f4869bdd3404bacc8499078cf032, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  currentDefence: 0
-  healthText: {fileID: 772522327}
-  gameManager: {fileID: 2132374904}
 --- !u!114 &862088353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5055,7 +5044,7 @@ MonoBehaviour:
   player: {fileID: 862088349}
   chaseDistance: 3
   returnDistance: 5
-  shootDistance: 3
+  shootDistance: 5
   shootInterval: 3
   shootIntervalCurrent: 0
   bullet: {fileID: 2798133969259331607, guid: af4790b2facf6674ea41ddd168964fab, type: 3}

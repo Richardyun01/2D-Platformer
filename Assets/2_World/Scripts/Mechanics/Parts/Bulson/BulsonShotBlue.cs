@@ -13,6 +13,19 @@ public class BulsonShotBlue : MonoBehaviour
     public bool HpIncreaseing = false;
     public float HpIncreasingValue = 0.5f;
 
+    void Awake()
+    {
+        // PlayerPrefs에서 BulsonShotRed 아이템 효과 활성화 상태 불러오기
+        if (PlayerPrefs.GetInt("BulsonShotBlueEnabled", 0) == 1)
+        {
+            this.enabled = true;
+        }
+        else
+        {
+            this.enabled = false;
+        }
+    }
+
     void OnEnable()
     {
         if (status != null)

@@ -16,6 +16,10 @@ GameObject:
   - component: {fileID: 8509783501685719824}
   - component: {fileID: 6082575806313374961}
   - component: {fileID: 1824045667}
+  - component: {fileID: 2191122411424355877}
+  - component: {fileID: 1887553635575789772}
+  - component: {fileID: 6681720741244079714}
+  - component: {fileID: 1124988954268177132}
   m_Layer: 13
   m_Name: Player
   m_TagString: Player
@@ -319,3 +323,69 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.54}
   m_EdgeRadius: 0
+--- !u!114 &2191122411424355877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208144871472054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0294f4869bdd3404bacc8499078cf032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  currentDefence: 0
+  healthText: {fileID: 0}
+  gameManager: {fileID: 0}
+--- !u!114 &1887553635575789772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208144871472054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7ab307573dddd44b090f4bb3ad93a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Attack: 5
+  Defense: 0
+  Player_Attack_Scale: 1
+  Player_AttackTaken_Scale: 1
+  Weapon_Attack: 0
+  Enemy_Defense: 0
+--- !u!114 &6681720741244079714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208144871472054}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 795db4f5654c64b4eab8ad3f78be1c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  status: {fileID: 1887553635575789772}
+  AttackBonus: 5
+--- !u!114 &1124988954268177132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208144871472054}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98dfbc39844aea4e9b0ddb2fe3bc9c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  status: {fileID: 1887553635575789772}
+  health: {fileID: 2191122411424355877}
+  DefenseBonus: 5
+  HpIncreaseing: 0
+  HpIncreasingValue: 0.5

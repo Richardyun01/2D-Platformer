@@ -60,7 +60,8 @@ namespace Platformer.Mechanics
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
             rigid = GetComponent<Rigidbody2D>();
-            checkDoubleJump = false;
+            //checkDoubleJump = false;
+            checkDoubleJump = PlayerPrefs.GetInt("DoubleJumpEnabled", 0) == 1;
             jumpCount = 0;
         }
 
@@ -202,7 +203,17 @@ namespace Platformer.Mechanics
             return ignorePlatform;
         }
 
-        
+        public bool GetCheckDoubleJump()
+        {
+            return checkDoubleJump;
+        }
+
+        public void SetCheckDoubleJump(bool value)
+        {
+            checkDoubleJump = value;
+        }
+
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag("Enemy"))
