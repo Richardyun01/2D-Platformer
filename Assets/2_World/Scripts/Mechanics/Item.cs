@@ -46,12 +46,12 @@ public class Item : MonoBehaviour
                 }
                 if (itemID == "BulsonShotRedItem")
                 {
-                    PlayerPrefs.SetInt("BulsonShotRedItem", 1);
+                    PlayerPrefs.SetInt("BulsonShotRedEnabled", 1);
                     PlayerPrefs.Save();
                 }
                 if (itemID == "BulsonShotBlueItem")
                 {
-                    PlayerPrefs.SetInt("BulsonShotBlueItem", 1);
+                    PlayerPrefs.SetInt("BulsonShotBlueEnabled", 1);
                     PlayerPrefs.Save();
                 }
 
