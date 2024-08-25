@@ -13,12 +13,16 @@ public class Pistol : MonoBehaviour
 
     public GameObject bulletPos;
     [SerializeField] GameObject BulletPref;
+    [SerializeField] AudioClip shootSound;
+    private AudioSource audioSource;
     Vector2 BulletDir;
     Camera cam;
     void Start()
     {
         cam = Camera.main;
+        audioSource = GetComponent<AudioSource>();
     }
+
     void Update()
     {
         Shoot();
@@ -27,6 +31,7 @@ public class Pistol : MonoBehaviour
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         BulletDir.Normalize();
     }
+
     void Shoot()
     {
         if (Input.GetMouseButtonDown(0))
@@ -36,7 +41,7 @@ public class Pistol : MonoBehaviour
                 GameObject PistolBullet = Instantiate(BulletPref, bulletPos.transform.position, transform.rotation);
                 Rigidbody2D rigidbody = PistolBullet.GetComponent<Rigidbody2D>();
                 PistolBullet.gameObject.GetComponent<Rigidbody2D>().AddForce(BulletDir * BulletSpeed, ForceMode2D.Impulse);
-
+                audioSource.PlayOneShot(shootSound);
                 NextFireTime = Time.time + FireCoolTime;
             }
             else

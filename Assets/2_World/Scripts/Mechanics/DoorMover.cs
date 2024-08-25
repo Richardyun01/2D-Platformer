@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DoorMover : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class DoorMover : MonoBehaviour
     private bool isMoving = false;
     private Vector3 initialPosition;
     private Vector3 targetPosition;
+    [Header("Custom Event")]
+    public UnityEvent customEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,8 @@ public class DoorMover : MonoBehaviour
             {
                 isMoving = false;
             }
+
+            customEvent.Invoke();
         }
     }
 

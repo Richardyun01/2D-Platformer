@@ -7,6 +7,7 @@ public class GameManagerScript : MonoBehaviour
 {
     public GameObject gameOverUI;
     public GameObject gameClearUI;
+    public BGMManager bgmManager;
 
     // Start is called before the first frame update
     void Start()
@@ -37,12 +38,23 @@ public class GameManagerScript : MonoBehaviour
     public void gameOver()
     {
         gameOverUI.SetActive(true);
+        if (bgmManager != null)
+        {
+            bgmManager.PlayGameOverBGM();
+        }
     }
 
     public void gameClear()
     {
-        if (gameClearUI != null)
+        if (gameClearUI != null) 
+        { 
             gameClearUI.SetActive(true);
+        }
+
+        if (bgmManager != null)
+        {
+            bgmManager.PlayGameClearBGM();
+        }
     }
 
     public void restart()

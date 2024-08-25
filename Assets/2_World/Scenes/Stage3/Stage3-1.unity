@@ -1710,6 +1710,7 @@ GameObject:
   - component: {fileID: 358247203}
   - component: {fileID: 358247202}
   - component: {fileID: 358247201}
+  - component: {fileID: 358247207}
   m_Layer: 7
   m_Name: Bot2
   m_TagString: Enemy
@@ -1842,11 +1843,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.005719185, y: -0.18016857}
+  m_Offset: {x: 0.00095653534, y: 0.02012533}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 1.15, y: 1.11}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1896,7 +1897,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 86f258550d213c340bdc74ee7ee056ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 817eae800bb286f4eb466c5b788b7813, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1907,6 +1908,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &358247207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358247199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837d72e2531b936438a4f8eee19e0c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSound: {fileID: 8300000, guid: cdf351e47621b1249aaf4f751bcc1278, type: 3}
 --- !u!1 &396520146
 GameObject:
   m_ObjectHideFlags: 0
@@ -2072,6 +2086,7 @@ GameObject:
   - component: {fileID: 422984441}
   - component: {fileID: 422984440}
   - component: {fileID: 422984439}
+  - component: {fileID: 422984445}
   m_Layer: 7
   m_Name: Bot2
   m_TagString: Enemy
@@ -2204,11 +2219,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.005719185, y: -0.18016857}
+  m_Offset: {x: 0.00095653534, y: 0.02012533}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 1.15, y: 1.11}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2258,7 +2273,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 86f258550d213c340bdc74ee7ee056ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 817eae800bb286f4eb466c5b788b7813, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2269,6 +2284,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &422984445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422984437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837d72e2531b936438a4f8eee19e0c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSound: {fileID: 8300000, guid: cdf351e47621b1249aaf4f751bcc1278, type: 3}
 --- !u!1 &436348936
 GameObject:
   m_ObjectHideFlags: 0
@@ -2744,6 +2772,7 @@ GameObject:
   - component: {fileID: 677688649}
   - component: {fileID: 677688648}
   - component: {fileID: 677688651}
+  - component: {fileID: 677688652}
   m_Layer: 0
   m_Name: BreakableDoor
   m_TagString: BreakablePlatform
@@ -2878,6 +2907,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   enemyManager: {fileID: 0}
+--- !u!114 &677688652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677688646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837d72e2531b936438a4f8eee19e0c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSound: {fileID: 8300000, guid: d487bcd55924f97409b2dc8506d60034, type: 3}
 --- !u!1 &682015665
 GameObject:
   m_ObjectHideFlags: 0
@@ -3119,11 +3161,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.005719185, y: -0.18016857}
+  m_Offset: {x: 0.00095653534, y: 0.02012533}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 1.15, y: 1.11}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3173,7 +3215,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 86f258550d213c340bdc74ee7ee056ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 817eae800bb286f4eb466c5b788b7813, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3616,6 +3658,7 @@ MonoBehaviour:
   bulletPos: {fileID: 682015665}
   BulletPref: {fileID: 2798133969259331607, guid: 18181015d1fe0ee4495fd0823a823871,
     type: 3}
+  shootSound: {fileID: 8300000, guid: 7662e914b5567494482d307c6dbcd1c3, type: 3}
 --- !u!1 &869878139
 GameObject:
   m_ObjectHideFlags: 0
@@ -3650,6 +3693,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 2132374904}
   player: {fileID: 862088348}
+  customEvent:
+    m_PersistentCalls:
+      m_Calls: []
   stageNumber: 31
 --- !u!50 &869878141
 Rigidbody2D:
@@ -4445,6 +4491,7 @@ GameObject:
   - component: {fileID: 1067950974}
   - component: {fileID: 1067950973}
   - component: {fileID: 1067950972}
+  - component: {fileID: 1067950975}
   m_Layer: 10
   m_Name: Lever1
   m_TagString: Untagged
@@ -4592,7 +4639,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1067950975}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   itemID: 
+  pickUpSound: {fileID: 0}
 --- !u!61 &1067950973
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4690,6 +4750,102 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &1067950975
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067950970}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1f5778d03c76aa04ea99a4894aac7e1b, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1093134591
 GameObject:
   m_ObjectHideFlags: 0
@@ -5514,6 +5670,7 @@ GameObject:
   - component: {fileID: 1336374601}
   - component: {fileID: 1336374600}
   - component: {fileID: 1336374599}
+  - component: {fileID: 1336374605}
   m_Layer: 7
   m_Name: Bot2
   m_TagString: Enemy
@@ -5646,11 +5803,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.005719185, y: -0.18016857}
+  m_Offset: {x: 0.00095653534, y: 0.02012533}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 1.15, y: 1.11}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5700,7 +5857,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 86f258550d213c340bdc74ee7ee056ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 817eae800bb286f4eb466c5b788b7813, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5711,6 +5868,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1336374605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336374597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837d72e2531b936438a4f8eee19e0c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSound: {fileID: 8300000, guid: cdf351e47621b1249aaf4f751bcc1278, type: 3}
 --- !u!1 &1349697730
 GameObject:
   m_ObjectHideFlags: 0
@@ -6138,6 +6308,7 @@ GameObject:
   - component: {fileID: 1518009336}
   - component: {fileID: 1518009335}
   - component: {fileID: 1518009338}
+  - component: {fileID: 1518009339}
   m_Layer: 0
   m_Name: Door1
   m_TagString: Untagged
@@ -6174,6 +6345,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 100
   moveSpeed: 2
+  customEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1518009339}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &1518009336
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6293,6 +6479,102 @@ MonoBehaviour:
   - {fileID: 422984437}
   doorMover: {fileID: 1518009335}
   objectToToggle: {fileID: 0}
+--- !u!82 &1518009339
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518009333}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c0c1f631a8c1d3341bb5485398b5036d, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1605509612
 GameObject:
   m_ObjectHideFlags: 0
@@ -13085,6 +13367,7 @@ GameObject:
   - component: {fileID: 1992238935}
   - component: {fileID: 1992238934}
   - component: {fileID: 1992238933}
+  - component: {fileID: 1992238939}
   m_Layer: 7
   m_Name: Bot2
   m_TagString: Enemy
@@ -13217,11 +13500,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.005719185, y: -0.18016857}
+  m_Offset: {x: 0.00095653534, y: 0.02012533}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 1.15, y: 1.11}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -13271,7 +13554,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 86f258550d213c340bdc74ee7ee056ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 817eae800bb286f4eb466c5b788b7813, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13282,6 +13565,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1992238939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992238931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837d72e2531b936438a4f8eee19e0c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSound: {fileID: 8300000, guid: cdf351e47621b1249aaf4f751bcc1278, type: 3}
 --- !u!1 &2068784794
 GameObject:
   m_ObjectHideFlags: 0
@@ -13330,6 +13626,7 @@ GameObject:
   - component: {fileID: 2086144107}
   - component: {fileID: 2086144106}
   - component: {fileID: 2086144105}
+  - component: {fileID: 2086144111}
   m_Layer: 7
   m_Name: Bot2
   m_TagString: Enemy
@@ -13462,11 +13759,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.005719185, y: -0.18016857}
+  m_Offset: {x: 0.00095653534, y: 0.02012533}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 1.15, y: 1.11}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -13516,7 +13813,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 86f258550d213c340bdc74ee7ee056ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 817eae800bb286f4eb466c5b788b7813, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13527,6 +13824,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2086144111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086144103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837d72e2531b936438a4f8eee19e0c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSound: {fileID: 8300000, guid: cdf351e47621b1249aaf4f751bcc1278, type: 3}
 --- !u!1 &2088775758
 GameObject:
   m_ObjectHideFlags: 0
@@ -13661,6 +13971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2132374905}
   - component: {fileID: 2132374904}
+  - component: {fileID: 2132374906}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -13682,6 +13993,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 1034372856}
   gameClearUI: {fileID: 974141955}
+  bgmManager: {fileID: 2132374906}
 --- !u!4 &2132374905
 Transform:
   m_ObjectHideFlags: 0
@@ -13697,6 +14009,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2132374906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132374903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7049a2ff715b649aa7de77a1ee3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmSource: {fileID: 1242834955}
+  gameOverBGM: {fileID: 8300000, guid: b403273763a8e97408fba941673b827e, type: 3}
+  gameClearBGM: {fileID: 8300000, guid: cbbf6e35d748dcb4b9d5250bbf1a7258, type: 3}
 --- !u!1 &2136383279
 GameObject:
   m_ObjectHideFlags: 0
