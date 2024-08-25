@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PressurePlate : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PressurePlate : MonoBehaviour
     public GameObject platform;
     public string targetTagPlayer = "Player"; // 플레이어나 특정 블록의 태그
     public string targetTagBlock = "MovableBlock";
+    [Header("Custom Event")]
+    public UnityEvent customEvent;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -26,6 +29,7 @@ public class PressurePlate : MonoBehaviour
             {
                 platform.SetActive(true);
             }
+            customEvent.Invoke();
         }
     }
 

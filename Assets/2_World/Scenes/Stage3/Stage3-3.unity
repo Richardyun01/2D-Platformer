@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 24287067}
   - component: {fileID: 24287071}
   - component: {fileID: 24287066}
+  - component: {fileID: 24287073}
   m_Layer: 0
   m_Name: Boss3Enemy
   m_TagString: Enemy
@@ -567,7 +568,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a0e4c89cf616f5343b56ffcaa2f4c74b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.38679248, g: 0.38496798, b: 0.38496798, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -612,6 +613,19 @@ MonoBehaviour:
   shootIntervalCurrent: 0
   bullet: {fileID: 2798133969259331607, guid: 79da262c2afe004429fba84821c402fc, type: 3}
   multiShotDelay: 0.25
+--- !u!114 &24287073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24287064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837d72e2531b936438a4f8eee19e0c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSound: {fileID: 8300000, guid: 987873782e28eec4bbc9e53b8f06b3e4, type: 3}
 --- !u!1 &61733856
 GameObject:
   m_ObjectHideFlags: 0
@@ -2685,6 +2699,7 @@ MonoBehaviour:
   bulletPos: {fileID: 682015665}
   BulletPref: {fileID: 2798133969259331607, guid: 18181015d1fe0ee4495fd0823a823871,
     type: 3}
+  shootSound: {fileID: 8300000, guid: 7662e914b5567494482d307c6dbcd1c3, type: 3}
 --- !u!114 &862088354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3846,6 +3861,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 1871848822}
+  customEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1431279215
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9541,6 +9559,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
+  customEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1871848821
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9907,6 +9928,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2132374905}
   - component: {fileID: 2132374904}
+  - component: {fileID: 2132374906}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -9928,6 +9950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 1034372856}
   gameClearUI: {fileID: 109010930}
+  bgmManager: {fileID: 2132374906}
 --- !u!4 &2132374905
 Transform:
   m_ObjectHideFlags: 0
@@ -9943,6 +9966,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2132374906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132374903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7049a2ff715b649aa7de77a1ee3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmSource: {fileID: 1242834955}
+  gameOverBGM: {fileID: 8300000, guid: b403273763a8e97408fba941673b827e, type: 3}
+  gameClearBGM: {fileID: 8300000, guid: cbbf6e35d748dcb4b9d5250bbf1a7258, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

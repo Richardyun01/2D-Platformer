@@ -12,6 +12,7 @@ TagManager:
   - Waypoint
   - MovableBlock
   - BreakablePlatform
+  - DamageTile
   layers:
   - Default
   - TransparentFX

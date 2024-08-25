@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DoorPressure : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class DoorPressure : MonoBehaviour
     private Vector3 openPosition;
     private bool isOpening = false;
     private bool isClosing = false;
+    [Header("Custom Event")]
+    public UnityEvent customEvent;
 
     void Start()
     {
@@ -27,6 +30,8 @@ public class DoorPressure : MonoBehaviour
             {
                 isOpening = false;
             }
+
+            customEvent.Invoke();
         }
         else if (isClosing)
         {

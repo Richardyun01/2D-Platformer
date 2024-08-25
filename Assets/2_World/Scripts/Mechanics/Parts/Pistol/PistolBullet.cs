@@ -6,9 +6,22 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float LifeTime = 0.5f;
-    public int damage = 5;
+    public int baseDamage = 5;  // 기본 damage 값
+    private int damage;
+
+    public BulsonShotRed bulsonShotRed;
+
     void Start()
     {
+        // BulsonShotRed에서 AttackBonus를 가져와 damage 계산
+        int attackBonus = 0;
+        if (bulsonShotRed != null)
+        {
+            attackBonus = bulsonShotRed.AttackBonus;
+        }
+
+        damage = baseDamage + attackBonus;
+
         Destroy(gameObject, LifeTime);
     }
     private void Update()
