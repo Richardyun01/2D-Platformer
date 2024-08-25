@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     public int currentDefence;
 
     public Text healthText;
+    public Text statusText;
+    public Text maxStatusText;
     private bool isDead;
     public GameManagerScript gameManager;
 
@@ -19,11 +21,23 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         currentDefence = 0;
         UpdateHealthUI();
+        UpdateStatusUI();
+        UpdateMaxStatusUI();
     }
 
     public void UpdateHealthUI()
     {
-        healthText.text = "Health: " + currentHealth.ToString();
+        healthText.text = "Health: " + currentHealth.ToString("F1");
+    }
+
+    public void UpdateStatusUI()
+    {
+        statusText.text = "현재 체력: " + Mathf.RoundToInt(currentHealth).ToString();
+    }
+
+    public void UpdateMaxStatusUI()
+    {
+        maxStatusText.text = "- 최대 HP: " + maxHealth.ToString();
     }
 
     public void TakeDamage(int damage)
@@ -37,10 +51,13 @@ public class PlayerHealth : MonoBehaviour
             gameManager.gameOver();
         }
         UpdateHealthUI();
+        UpdateStatusUI();
     }
     public void IncreaseHP(float HpAmount)
     {
         currentHealth += HpAmount;
+        UpdateHealthUI();
+        UpdateStatusUI();
     }
     void Update()
     {

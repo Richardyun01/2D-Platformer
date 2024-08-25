@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStatus : MonoBehaviour
 {
@@ -12,9 +13,24 @@ public class PlayerStatus : MonoBehaviour
 
     public float Weapon_Attack;
     public float Enemy_Defense;
+
+    public Text attackText;
+    public Text defenceText;
+
     void Start()
     {
+        UpdateAttackUI();
+        UpdateDefenceUI();
+    }
 
+    public void UpdateAttackUI()
+    {
+        attackText.text = "- 현재 공격력: " + Attack.ToString();
+    }
+
+    public void UpdateDefenceUI()
+    {
+        defenceText.text = "- 현재 방어력: " + Defense.ToString();
     }
 
     void Update()
