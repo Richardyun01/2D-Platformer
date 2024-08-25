@@ -55,6 +55,8 @@ public class Item : MonoBehaviour
                     PlayerPrefs.Save();
                 }
 
+                //InventoryManager.Instance.AddItem(this);
+
                 // Add the object to the PickedUpItems list
                 FindObjectOfType<InteractionSystem>().PickUpItem(gameObject);
                 // Disable
