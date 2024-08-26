@@ -68,13 +68,6 @@ public class Item : MonoBehaviour
                     PlayerPrefs.Save();
                 }
 
-                // 아이템 UI에 추가
-                InventoryUI inventoryUI = FindObjectOfType<InventoryUI>();
-                if (inventoryUI != null)
-                {
-                    inventoryUI.AddItem(itemID);
-                }
-
                 if (audioSource != null && pickUpSound != null)
                 {
                     Debug.Log("오디오 재생");
