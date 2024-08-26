@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 20101096}
   - component: {fileID: 20101095}
   - component: {fileID: 20101094}
+  - component: {fileID: 20101097}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -336,9 +337,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2132374904}
-        m_TargetAssemblyTypeName: GameManagerScript, Assembly-CSharp
-        m_MethodName: restart
+      - m_Target: {fileID: 20101097}
+        m_TargetAssemblyTypeName: Level3, Assembly-CSharp
+        m_MethodName: Level3Btn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -386,6 +387,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20101092}
   m_CullTransparentMesh: 1
+--- !u!114 &20101097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20101092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd26d1d7a35148489639214acd745f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &38172419
 GameObject:
   m_ObjectHideFlags: 0
