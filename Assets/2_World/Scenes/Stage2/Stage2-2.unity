@@ -1793,6 +1793,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b843f9f8e2f9c4ca7e687e248d5b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &187590394 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1547720486957506682, guid: 9a1bd12ebb35d4dc997aa0c5494eda9b,
+    type: 3}
+  m_PrefabInstance: {fileID: 187590389}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &187590395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8977044635800855088, guid: 9a1bd12ebb35d4dc997aa0c5494eda9b,
+    type: 3}
+  m_PrefabInstance: {fileID: 187590389}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &187590396 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2255377347548268977, guid: 9a1bd12ebb35d4dc997aa0c5494eda9b,
+    type: 3}
+  m_PrefabInstance: {fileID: 187590389}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &187590397 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2326936495034530880, guid: 9a1bd12ebb35d4dc997aa0c5494eda9b,
+    type: 3}
+  m_PrefabInstance: {fileID: 187590389}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &187590398 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2806225725153666028, guid: 9a1bd12ebb35d4dc997aa0c5494eda9b,
+    type: 3}
+  m_PrefabInstance: {fileID: 187590389}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &187590399 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5529935281572532329, guid: 9a1bd12ebb35d4dc997aa0c5494eda9b,
+    type: 3}
+  m_PrefabInstance: {fileID: 187590389}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &223639864
 GameObject:
   m_ObjectHideFlags: 0
@@ -18180,6 +18234,16 @@ MonoBehaviour:
   - {fileID: 572697799}
   - {fileID: 1341041194}
   - {fileID: 1481548225}
+  pauseMenuItems:
+  - itemID: BulsonShotRedItem
+    iconObject: {fileID: 187590399}
+    descriptionText: {fileID: 187590398}
+  - itemID: DoubleJumpItem
+    iconObject: {fileID: 187590397}
+    descriptionText: {fileID: 187590396}
+  - itemID: BulsonShotBlueItem
+    iconObject: {fileID: 187590395}
+    descriptionText: {fileID: 187590394}
 --- !u!114 &1811693497
 MonoBehaviour:
   m_ObjectHideFlags: 0
