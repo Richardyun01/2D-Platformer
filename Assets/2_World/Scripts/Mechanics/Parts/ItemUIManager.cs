@@ -6,6 +6,17 @@ public class ItemUIManager : MonoBehaviour
 {
     public Image[] itemIcons;  // 아이콘 슬롯을 담을 배열
     private Dictionary<string, Image> itemIconMap = new Dictionary<string, Image>();
+
+    // 일시정지 화면 UI 요소들
+    [System.Serializable]
+    public class PauseMenuItem
+    {
+        public string itemID;
+        public GameObject iconObject;   // 아이콘 오브젝트
+        public Text descriptionText;    // 설명 텍스트
+    }
+    public PauseMenuItem[] pauseMenuItems;
+
     private string[] scenesToShow = { "Stage1-1", "Stage1-2", "Stage1-3", "Stage2-1", "Stage2-2", "Stage2-3", "Stage3-1", "Stage3-2", "Stage3-3" };
 
     void Start()
@@ -13,6 +24,7 @@ public class ItemUIManager : MonoBehaviour
         // 아이콘을 초기화하고 아이템 상태를 체크합니다.
         InitializeIcons();
         CheckSceneAndUpdateIcons();
+        InitializePauseMenuItems();
     }
 
     void InitializeIcons()
@@ -28,6 +40,23 @@ public class ItemUIManager : MonoBehaviour
             if (PlayerPrefs.GetInt(itemID, 0) == 1)
             {
                 itemIconMap[itemID].gameObject.SetActive(true);
+            }
+        }
+    }
+
+    void InitializePauseMenuItems()
+    {
+        foreach (var item in pauseMenuItems)
+        {
+            if (PlayerPrefs.GetInt(item.itemID, 0) == 1)
+            {
+                item.iconObject.SetActive(true);
+                item.descriptionText.gameObject.SetActive(true);
+            }
+            else
+            {
+                item.iconObject.SetActive(false);
+                item.descriptionText.gameObject.SetActive(false);
             }
         }
     }
@@ -59,6 +88,16 @@ public class ItemUIManager : MonoBehaviour
         if (itemIconMap.ContainsKey(itemID))
         {
             itemIconMap[itemID].gameObject.SetActive(true);
+        }
+
+        // 일시정지 화면에서도 해당 아이템의 아이콘과 설명을 활성화
+        foreach (var item in pauseMenuItems)
+        {
+            if (item.itemID == itemID)
+            {
+                item.iconObject.SetActive(true);
+                item.descriptionText.gameObject.SetActive(true);
+            }
         }
     }
 
