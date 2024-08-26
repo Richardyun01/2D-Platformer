@@ -16,10 +16,13 @@ public class PlayerHealth : MonoBehaviour
     private bool isDead;
     public GameManagerScript gameManager;
 
+    private HealthBar healthBar; // 체력바 스크립트 참조
+
     void Start()
     {
         currentHealth = maxHealth;
         currentDefence = 0;
+        healthBar = FindObjectOfType<HealthBar>(); // HealthBar 스크립트 참조
         UpdateHealthUI();
         UpdateStatusUI();
         UpdateMaxStatusUI();
@@ -28,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
     public void UpdateHealthUI()
     {
         healthText.text = "Health: " + currentHealth.ToString("F1");
+        healthBar.UpdateHealthBar(currentHealth); // 체력바 업데이트
     }
 
     public void UpdateStatusUI()
