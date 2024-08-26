@@ -52,6 +52,8 @@ public class Item : MonoBehaviour
                 PlayerPrefs.SetInt(itemID, 1);
                 PlayerPrefs.Save();
 
+                FindObjectOfType<ItemUIManager>().AddItemIcon(itemID);
+
                 if (itemID == "DoubleJumpItem")
                 {
                     PlayerPrefs.SetInt("DoubleJumpEnabled", 1);
@@ -74,8 +76,6 @@ public class Item : MonoBehaviour
                     audioSource.clip = pickUpSound;
                     audioSource.Play();
                 }
-
-                //InventoryManager.Instance.AddItem(this);
 
                 // Add the object to the PickedUpItems list
                 FindObjectOfType<InteractionSystem>().PickUpItem(gameObject);
