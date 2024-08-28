@@ -20,6 +20,9 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
+        if (healthText == null) Debug.LogError("Health Text is not assigned!");
+        if (statusText == null) Debug.LogError("Status Text is not assigned!");
+        if (maxStatusText == null) Debug.LogError("Max Status Text is not assigned!");
         currentHealth = maxHealth;
         currentDefence = 0;
         healthBar = FindObjectOfType<HealthBar>(); // HealthBar 스크립트 참조
@@ -36,11 +39,13 @@ public class PlayerHealth : MonoBehaviour
 
     public void UpdateStatusUI()
     {
-        statusText.text = "현재 체력: " + Mathf.RoundToInt(currentHealth).ToString();
+        Debug.Log("UpdateStatusUI Called");
+        statusText.text = "현재 체력 : " + Mathf.RoundToInt(currentHealth).ToString();
     }
 
     public void UpdateMaxStatusUI()
     {
+        Debug.Log("UpdateMaxStatusUI Called");
         maxStatusText.text = "- 최대 HP: " + maxHealth.ToString();
     }
 

@@ -6,13 +6,16 @@ public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public EnemyManager enemyManager;
-    private int currentHealth;
+    public int currentHealth;
     private HitSoundEffect hitSoundEffect;
+
+    private BossHealthBar bossHealthBar;
 
     void Start()
     {
         currentHealth = maxHealth;
         hitSoundEffect = GetComponent<HitSoundEffect>();
+        bossHealthBar = GetComponentInChildren<BossHealthBar>();
     }
 
     public void TakeDamage(int amount)
@@ -22,6 +25,11 @@ public class EnemyHealth : MonoBehaviour
         if (hitSoundEffect != null)
         {
             hitSoundEffect.PlayHitSound();
+        }
+
+        if (bossHealthBar != null)
+        {
+            bossHealthBar.UpdateHealthBar(currentHealth);
         }
 
         if (currentHealth <= 0)
@@ -36,6 +44,12 @@ public class EnemyHealth : MonoBehaviour
         {
             enemyManager.OnEnemyDefeated(gameObject);
         }
+
+        if (bossHealthBar != null)
+        {
+            bossHealthBar.gameObject.SetActive(false); // 보스 사망 시 체력바 비활성화
+        }
+
         Destroy(gameObject);
     }
 }

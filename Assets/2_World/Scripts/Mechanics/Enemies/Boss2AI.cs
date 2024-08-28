@@ -28,6 +28,8 @@ public class Boss2AI : MonoBehaviour
 
     public float multiShotDelay = 0.2f; // 각 탄 사이의 지연 시간
 
+    public SoundTrigger soundTrigger;
+
     protected void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -156,6 +158,14 @@ public class Boss2AI : MonoBehaviour
             shot.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(playerPos.y, playerPos.x) * 180 / Mathf.PI);
 
             yield return new WaitForSeconds(multiShotDelay); // 각 탄 사이의 지연 시간
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (soundTrigger != null)
+        {
+            soundTrigger.DisableZone(); // 소리 재생 오브젝트 비활성화
         }
     }
 }
