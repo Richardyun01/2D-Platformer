@@ -10,10 +10,14 @@ public class DisableObjectOnTrigger : MonoBehaviour
     // Collider2D가 Trigger 영역에 진입했을 때 호출되는 메서드
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // 특정 오브젝트를 비활성화
-        if (objectToDisable != null)
+        // 트리거에 진입한 오브젝트의 태그가 "Player"인 경우에만 실행
+        if (other.CompareTag("Player"))
         {
-            objectToDisable.SetActive(false);
+            // 특정 오브젝트를 비활성화
+            if (objectToDisable != null)
+            {
+                objectToDisable.SetActive(false);
+            }
         }
     }
 }
