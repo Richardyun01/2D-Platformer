@@ -101,7 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LifeTime: 0.75
-  damage: 5
+  baseDamage: 5
+  bulsonShotRed: {fileID: 0}
 --- !u!70 &6698705704002091639
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
