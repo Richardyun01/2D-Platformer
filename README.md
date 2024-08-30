@@ -11,9 +11,14 @@
 ## 기초 개발
 - 플레이어 물리 엔진 개선
 - Scene에 적용할 기본 시스템(2단 점프, 상하 이동 플랫폼, 상호작용 시스템, 이동 키 교체) 개발
-<img src="https://github.com/user-attachments/assets/0c9948c2-7158-4b20-b4ad-e9842b17a2be" width="540" height="360"/>
-<img src="https://github.com/user-attachments/assets/85df325a-3bd5-4541-871f-653369bedba7" width="540" height="360"/>
-<img src="https://github.com/user-attachments/assets/91eb94b2-88f0-4ecf-a30d-9f1786f51263" width="540" height="360"/>
+  - 2단 점프
+  <img src="https://github.com/user-attachments/assets/0c9948c2-7158-4b20-b4ad-e9842b17a2be" width="540" height="360"/>
+  
+  - 상하 이동 플랫폼
+  <img src="https://github.com/user-attachments/assets/85df325a-3bd5-4541-871f-653369bedba7" width="540" height="360"/>
+  
+  - 상호작용 시스템
+  <img src="https://github.com/user-attachments/assets/91eb94b2-88f0-4ecf-a30d-9f1786f51263" width="540" height="360"/>
 
 ## 베이스 개발
 
