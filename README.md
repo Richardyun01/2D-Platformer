@@ -1,5 +1,7 @@
 # 2D-Platformer
-- 2D-Platformer project for 2024 CIEN tutorial 2024.07 ~ 2024.08 
+<img width="1931" height="1088" alt="MainPage" src="https://github.com/user-attachments/assets/20c58864-9482-4ef0-b539-0bb885d012b7" />
+
+- 2D-Platformer project for 2024 CIEN tutorial 2024.07 ~ 2024.08
 - 개발 노트: https://www.notion.so/824b43e110874251adcacf3042a255a3?v=277d33da217744a49c333ea9d17a2e35&p=a5f1ba6ef54f4fec91e88482c6c7f379&pm=s
 
 ## 개발 과정
